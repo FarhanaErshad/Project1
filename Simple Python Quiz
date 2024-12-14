@@ -1,0 +1,49 @@
+
+print("Welcome to the Quiz Game!")
+play = input("Do you want to play? (yes/no): ").strip().lower()
+
+if play != "yes":
+    print("Try Again")
+else:
+    print("Start :\n")
+
+
+    questions = [
+
+        ( "What is the capital of Bangladesh?", "Dhaka"),
+        ( "What is 2 + 2?",  "4"),
+        ("What is the full form of OS?", "Operating System"),
+        ( "What is the smallest prime number?",  "2"),
+        ( "What is the chemical symbol for water?",  "H2O"),
+        ( "What is 15% of 200?", "30"),
+        ("What is 12 divided by 4?", "3"),
+        ("What is 5 multiplied by 6?", "30"),
+        ( "What is the square root of 64?",  "8"),
+        ( "How many days are there in a leap year?", "366"),
+    ]
+
+    score = 0
+
+    for q, a in questions:
+        user_answer = input(q + " ").strip()
+        if user_answer.lower() == a.lower():
+            score += 5
+            print("Correct answer :)")
+        else:
+            score -= 2
+            print("Incorrect answer :(")
+
+    percentage = (score / (len(questions) * 5)) * 100
+    print(f"\nTotal Score: {score}")
+    if percentage <=0:
+        print("Result: Fail")
+    else:
+        print("Result: Pass")
+    if percentage>=60:
+        print("Congratulations! You passed the quiz!")
+    else:
+        print("Sorry, you failed the quiz. Better luck next time!")
+
+
+
+
